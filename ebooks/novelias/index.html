@@ -1,3 +1,1319 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NovelIAs | Usarias</title><meta name="description" content="Uma coleção de histórias criada com apoio de Inteligência Artificial, explorando criatividade e novas possibilidades narrativas."><meta property="og:title" content="NovelIAs | Usarias"><meta property="og:description" content="Uma coleção de histórias criada com apoio de Inteligência Artificial, explorando criatividade e novas possibilidades narrativas."><meta property="og:type" content="website"><link rel="stylesheet" href="../../assets/css/style.css"></head><body><header><div class="container nav"><a class="brand" href="../../"><span class="logo">U</span><span>Usarias</span></a><button class="menu" aria-label="Abrir menu">☰</button><nav><a href="../../ebooks/">Biblioteca</a><a href="../../ferramentas/">Ferramentas</a><a href="../../prompts/">Prompts</a><a href="../../recursos/">Grátis</a><a href="../../blog/">Blog</a><a href="../../sobre/">Sobre</a></nav><a class="btn secondary" href="../../ebooks/">Explorar</a></div></header>
-<main><section><div class="container product"><div><span class="eyebrow">Usarias Stories</span><h1>NovelIAs</h1><p>Uma coleção de histórias criada com apoio de Inteligência Artificial, explorando criatividade e novas possibilidades narrativas.</p><div class="cards-actions"><a class="btn primary" target="_blank" rel="noopener" href="https://hotm.io/novelIAs">Comprar na Hotmart</a><a class="btn secondary" href="../">Voltar aos ebooks</a></div></div><div class="cover"><div class="book alt"><small>USARIAS STORIES</small><strong>NovelIAs</strong><small>Produto digital Usarias</small></div></div></div></section>
-<section><div class="container"><div class="cta"><div><h2>Compra segura pela Hotmart.</h2><p>Ao clicar no botão, você será direcionado para a página oficial do produto.</p></div><a class="btn primary" target="_blank" rel="noopener" href="https://hotm.io/novelIAs">Comprar agora</a></div></div></section></main><footer><div class="container footer"><div class="brand"><span class="logo">U</span><span>Usarias</span></div><div class="footer-links"><a href="../../ebooks/">Biblioteca</a><a href="../../ferramentas/">Ferramentas</a><a href="../../blog/">Blog</a><a href="../../contato/">Contato</a></div><span>© 2026 Usarias</span></div></footer><script src="../../assets/js/main.js"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aprenda a criar personagens de frutas, histórias, cenas, imagens e conteúdos em episódios usando Inteligência Artificial.">
+  <meta property="og:title" content="Novelinha da Fruta com IA | Usarias">
+  <meta property="og:description" content="Crie personagens, histórias e conteúdos em episódios usando Inteligência Artificial.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../../assets/images/novelinha-da-fruta.webp">
+  <title>Novelinha da Fruta com IA | Usarias</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon/favicon.svg">
+
+  <style>
+    :root {
+      --bg: #07080c;
+      --bg-soft: #0c0f16;
+      --panel: rgba(255,255,255,.055);
+      --panel-strong: rgba(255,255,255,.085);
+      --line: rgba(255,255,255,.11);
+      --text: #f7f8fb;
+      --muted: #a8b0bf;
+      --purple: #a78bfa;
+      --blue: #60a5fa;
+      --cyan: #67e8f9;
+      --green: #86efac;
+      --danger: #fca5a5;
+
+      /* Cores exclusivas deste produto, usadas só como acentos */
+      --fruit-pink: #f472b6;
+      --fruit-orange: #fb923c;
+      --fruit-yellow: #fde047;
+      --fruit-red: #fb7185;
+      --fruit-lime: #bef264;
+
+      --max: 1180px;
+      --radius: 24px;
+      --shadow: 0 30px 90px rgba(0,0,0,.42);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(167,139,250,.15), transparent 28%),
+        radial-gradient(circle at 90% 18%, rgba(96,165,250,.13), transparent 30%),
+        radial-gradient(circle at 52% 58%, rgba(244,114,182,.045), transparent 28%),
+        linear-gradient(180deg, #07080c 0%, #090b11 45%, #07080c 100%);
+      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black, transparent 70%);
+    }
+
+    h1, h2, h3, .brand { font-family: "Space Grotesk", "Inter", sans-serif; }
+    h1, h2, h3, p { margin-top: 0; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { max-width: 100%; }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .glass {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: #dce4ef;
+      background: rgba(255,255,255,.035);
+      font-size: .82rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #fff 0%, #d8ccff 28%, var(--fruit-pink) 50%, var(--fruit-orange) 68%, var(--cyan) 88%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(7,8,12,.76);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      font-size: 1.2rem;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: #090a0f;
+      background: linear-gradient(135deg, var(--purple), var(--cyan));
+      box-shadow: 0 12px 32px rgba(103,232,249,.18);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    nav a:hover { color: var(--text); }
+
+    .menu-btn {
+      display: none;
+      color: var(--text);
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 9px 12px;
+      cursor: pointer;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 14px;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      transition: .22s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.28);
+    }
+
+    .btn-primary {
+      color: #090a0f;
+      border: 0;
+      background: linear-gradient(135deg, #fff 0%, var(--cyan) 45%, var(--purple) 100%);
+    }
+
+    .btn-product {
+      color: #090a0f;
+      border: 0;
+      background: linear-gradient(135deg, #fff 0%, var(--fruit-yellow) 28%, var(--fruit-pink) 58%, var(--cyan) 100%);
+    }
+
+    .btn-secondary { background: rgba(255,255,255,.045); }
+
+    .hero {
+      padding: 92px 0 64px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 24px 0 20px;
+      font-size: clamp(3.1rem, 6.8vw, 6.4rem);
+      line-height: .95;
+      letter-spacing: -.07em;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .trust-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin-top: 22px;
+      color: #cdd5e1;
+      font-size: .9rem;
+    }
+
+    .book-stage {
+      position: relative;
+      min-height: 590px;
+      display: grid;
+      place-items: center;
+    }
+
+    .book-glow {
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      background: conic-gradient(from 180deg, var(--purple), var(--fruit-pink), var(--fruit-orange), var(--cyan), var(--purple));
+      opacity: .28;
+      filter: blur(20px);
+    }
+
+    .book-orbit {
+      position: absolute;
+      width: 470px;
+      height: 470px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.08);
+      animation: orbit 24s linear infinite;
+    }
+
+    .book-orbit::before,
+    .book-orbit::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+
+    .book-orbit::before { inset: 44px; }
+    .book-orbit::after { inset: 92px; }
+
+    @keyframes orbit { to { transform: rotate(360deg); } }
+
+    .book-cover {
+      position: relative;
+      z-index: 2;
+      width: min(78%, 365px);
+      aspect-ratio: 3/4;
+      border-radius: 16px 30px 30px 16px;
+      overflow: hidden;
+      box-shadow: -34px 42px 90px rgba(0,0,0,.58);
+      transform: rotate(-5deg);
+      transition: .35s ease;
+      border: 1px solid rgba(255,255,255,.16);
+      background: #111827;
+    }
+
+    .book-cover:hover { transform: rotate(-2deg) translateY(-8px); }
+
+    .book-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .float-card {
+      position: absolute;
+      z-index: 3;
+      padding: 14px 16px;
+      border-radius: 16px;
+      min-width: 180px;
+    }
+
+    .float-card strong { display: block; font-size: .95rem; }
+    .float-card span { color: var(--muted); font-size: .78rem; }
+    .float-one { left: 0; top: 110px; }
+    .float-two { right: 0; bottom: 110px; }
+
+    .proof-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      padding: 18px;
+      border-radius: 22px;
+      margin-top: 12px;
+    }
+
+    .proof-item {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .proof-item strong { display: block; margin-bottom: 4px; }
+    .proof-item span { color: var(--muted); font-size: .9rem; }
+
+    section { padding: 82px 0; }
+
+    .section-head {
+      max-width: 840px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      margin: 14px 0 12px;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 1;
+      letter-spacing: -.055em;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .flow-step {
+      position: relative;
+      padding: 20px 14px;
+      text-align: center;
+      border-radius: 18px;
+    }
+
+    .flow-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -17px;
+      transform: translateY(-50%);
+      color: var(--fruit-orange);
+      font-weight: 800;
+    }
+
+    .problem-grid,
+    .bento-grid,
+    .audience-grid,
+    .character-grid,
+    .format-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .problem-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .card {
+      padding: 28px;
+      border-radius: var(--radius);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+    }
+
+    .card p { color: var(--muted); margin-bottom: 0; }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+      counter-reset: chapter;
+    }
+
+    .chapter {
+      counter-increment: chapter;
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .chapter::before {
+      content: "0" counter(chapter);
+      font-family: "Space Grotesk";
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--fruit-pink);
+    }
+
+    .chapter h3 { margin-bottom: 6px; }
+    .chapter p { color: var(--muted); margin-bottom: 0; }
+
+    .bento-grid { grid-template-columns: repeat(12, 1fr); }
+    .span-7 { grid-column: span 7; }
+    .span-5 { grid-column: span 5; }
+    .span-6 { grid-column: span 6; }
+
+    .task-list {
+      padding-left: 18px;
+      margin: 18px 0 0;
+      color: var(--muted);
+    }
+
+    .task-list li { margin: 8px 0; }
+
+    .character-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .character-card {
+      min-height: 315px;
+      padding: 24px;
+      border-radius: 24px;
+    }
+
+    .character-face {
+      width: 105px;
+      height: 105px;
+      margin-bottom: 18px;
+      border-radius: 46% 54% 50% 50%;
+      position: relative;
+      background: var(--character);
+      box-shadow: inset -12px -12px 24px rgba(0,0,0,.12), 0 18px 30px rgba(0,0,0,.22);
+    }
+
+    .character-face::before,
+    .character-face::after {
+      content: "";
+      position: absolute;
+      top: 39px;
+      width: 10px;
+      height: 15px;
+      border-radius: 50%;
+      background: #10121a;
+    }
+
+    .character-face::before { left: 28px; }
+    .character-face::after { right: 28px; }
+
+    .mouth {
+      position: absolute;
+      left: 50%;
+      top: 68px;
+      width: 34px;
+      height: 16px;
+      transform: translateX(-50%);
+      border-bottom: 3px solid #10121a;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .character-role {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.035);
+      color: #e8edf7;
+      font-size: .8rem;
+    }
+
+    .formula-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .formula-card {
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.035);
+    }
+
+    .formula-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--fruit-yellow);
+    }
+
+    .story-example {
+      margin-top: 22px;
+      padding: 26px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(167,139,250,.08), rgba(244,114,182,.05), rgba(103,232,249,.03));
+    }
+
+    .hook {
+      display: inline-flex;
+      margin-top: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: #090a0f;
+      background: linear-gradient(90deg, var(--fruit-yellow), var(--fruit-pink), var(--cyan));
+      font-weight: 800;
+    }
+
+    .prompt-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .prompt-box {
+      padding: 24px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+    }
+
+    .prompt-box.bad { border-color: rgba(252,165,165,.25); }
+    .prompt-box.good { border-color: rgba(134,239,172,.25); }
+
+    .prompt-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      font-weight: 800;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .format-grid { grid-template-columns: repeat(4, 1fr); }
+
+    .phone {
+      width: 108px;
+      height: 205px;
+      margin: 0 auto 18px;
+      padding: 10px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: #0f1118;
+      box-shadow: 0 18px 36px rgba(0,0,0,.3);
+    }
+
+    .phone-screen {
+      height: 100%;
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(167,139,250,.18), rgba(244,114,182,.18), rgba(103,232,249,.08)),
+        #171a24;
+    }
+
+    .audience-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 30px;
+      margin: 12px 0;
+      color: var(--muted);
+    }
+
+    .check-list li::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 900;
+    }
+
+    .yes li::before { content: "✓"; color: var(--green); }
+    .no li::before { content: "×"; color: var(--danger); }
+
+    .receive {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 36px;
+      align-items: center;
+      padding: 36px;
+      border-radius: 30px;
+    }
+
+    .mini-cover {
+      width: min(100%, 300px);
+      aspect-ratio: 3/4;
+      border-radius: 12px 22px 22px 12px;
+      overflow: hidden;
+      box-shadow: -22px 28px 60px rgba(0,0,0,.45);
+      transform: rotate(-4deg);
+      justify-self: center;
+    }
+
+    .mini-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .trust-strip {
+      padding: 30px;
+      border-radius: 22px;
+      text-align: center;
+    }
+
+    .trust-points {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px 28px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .faq { display: grid; gap: 12px; }
+
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255,255,255,.035);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 20px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .28s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 22px 22px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .faq-item.open .faq-answer { max-height: 260px; }
+    .faq-symbol { transition: transform .25s ease; }
+    .faq-item.open .faq-symbol { transform: rotate(45deg); }
+
+    .final-cta {
+      padding: 56px;
+      border-radius: 32px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(167,139,250,.2), transparent 28%),
+        radial-gradient(circle at 88% 80%, rgba(103,232,249,.16), transparent 26%),
+        radial-gradient(circle at 50% 100%, rgba(244,114,182,.10), transparent 30%),
+        rgba(255,255,255,.04);
+    }
+
+    .final-cta h2 {
+      margin: 12px auto 14px;
+      max-width: 840px;
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+
+    .final-cta p {
+      max-width: 700px;
+      margin: 0 auto 26px;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid rgba(255,255,255,.07);
+      color: var(--muted);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(2, .8fr);
+      gap: 28px;
+    }
+
+    .footer-col strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .footer-col a { display: block; margin: 8px 0; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      nav {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        background: #0b0d13;
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav.open { display: flex; }
+      .menu-btn { display: inline-flex; }
+      .nav > .btn { display: none; }
+
+      .hero-grid,
+      .receive,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero { padding-top: 72px; }
+      .book-stage { min-height: 500px; }
+      .proof-bar { grid-template-columns: repeat(2, 1fr); }
+      .problem-grid { grid-template-columns: 1fr; }
+      .character-grid { grid-template-columns: 1fr; }
+      .format-grid { grid-template-columns: repeat(2, 1fr); }
+      .audience-grid { grid-template-columns: 1fr; }
+      .formula-grid { grid-template-columns: repeat(2, 1fr); }
+      .flow { grid-template-columns: repeat(3, 1fr); }
+      .span-7, .span-5, .span-6 { grid-column: span 12; }
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: clamp(2.8rem, 15vw, 4.6rem); }
+      section { padding: 64px 0; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .trust-list { flex-direction: column; gap: 8px; }
+      .proof-bar { grid-template-columns: 1fr; }
+      .format-grid,
+      .formula-grid,
+      .prompt-grid,
+      .flow { grid-template-columns: 1fr; }
+      .book-stage { min-height: 430px; }
+      .book-orbit { width: 350px; height: 350px; }
+      .float-card { min-width: 150px; padding: 12px; }
+      .float-one { left: 0; top: 80px; }
+      .float-two { right: 0; bottom: 70px; }
+      .flow-step:not(:last-child)::after {
+        content: "↓";
+        top: auto;
+        right: auto;
+        left: 50%;
+        bottom: -18px;
+        transform: translateX(-50%);
+      }
+      .chapter { grid-template-columns: 52px 1fr; }
+      .receive, .final-cta { padding: 28px; }
+      .trust-points { flex-direction: column; gap: 8px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="../../index.html" aria-label="Usarias, página inicial">
+        <span class="brand-mark">U</span>
+        <span>Usarias</span>
+      </a>
+
+      <button class="menu-btn" aria-label="Abrir menu">☰</button>
+
+      <nav aria-label="Navegação principal">
+        <a href="../../index.html">Início</a>
+        <a href="../../index.html#biblioteca">Biblioteca</a>
+        <a href="#aprendizado">Conteúdo</a>
+        <a href="#publico">Para quem é</a>
+        <a href="#faq">Perguntas frequentes</a>
+      </nav>
+
+      <a class="btn btn-secondary" href="#comprar">Quero o ebook</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Criatividade e conteúdo com IA</span>
+          <h1>Transforme frutas em personagens e ideias em <span class="gradient-text">histórias que prendem a atenção.</span></h1>
+          <p class="hero-copy">Aprenda a criar personagens marcantes, diálogos, cenas, imagens e vídeos em formato de novelinha usando Inteligência Artificial, mesmo sem experiência com roteiro, desenho ou edição.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-product" href="https://hotm.io/novelIAs" target="_blank" rel="noopener">Quero criar minha novelinha</a>
+            <a class="btn btn-secondary" href="#aprendizado">Ver o conteúdo</a>
+          </div>
+
+          <div class="trust-list">
+            <span>✓ Pagamento único</span>
+            <span>✓ Acesso imediato</span>
+            <span>✓ Leitura no celular, tablet ou computador</span>
+          </div>
+        </div>
+
+        <div class="book-stage" aria-label="Capa do ebook Novelinha da Fruta com IA">
+          <div class="book-glow"></div>
+          <div class="book-orbit"></div>
+
+          <div class="book-cover">
+            <img src="../../assets/images/novelinha-da-fruta.webp" alt="Capa do ebook Novelinha da Fruta com IA">
+          </div>
+
+          <div class="float-card float-one glass">
+            <strong>Personagens com personalidade</strong>
+            <span>Voz, desejo, medo e conflito</span>
+          </div>
+
+          <div class="float-card float-two glass">
+            <strong>Histórias em episódios</strong>
+            <span>Cenas curtas com gancho</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="proof-bar glass">
+          <div class="proof-item"><strong>Comece do zero</strong><span>Sem precisar desenhar ou escrever roteiros</span></div>
+          <div class="proof-item"><strong>Personagens originais</strong><span>Personalidades e relações bem definidas</span></div>
+          <div class="proof-item"><strong>Prompts práticos</strong><span>Modelos para criar cenas consistentes</span></div>
+          <div class="proof-item"><strong>Conteúdo para redes</strong><span>TikTok, Reels, Shorts e carrosséis</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Por que este guia existe</span>
+          <h2>Uma fruta pode virar personagem. Um personagem pode virar uma história inteira.</h2>
+          <p>A Novelinha da Fruta mostra como transformar uma ideia simples em personagens, cenas e episódios criados com apoio da Inteligência Artificial.</p>
+        </div>
+
+        <div class="flow">
+          <div class="flow-step glass reveal"><strong>Fruta</strong></div>
+          <div class="flow-step glass reveal"><strong>Personagem</strong></div>
+          <div class="flow-step glass reveal"><strong>Conflito</strong></div>
+          <div class="flow-step glass reveal"><strong>Cena</strong></div>
+          <div class="flow-step glass reveal"><strong>Episódio</strong></div>
+          <div class="flow-step glass reveal"><strong>Conteúdo</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">O desafio</span>
+          <h2>Ter uma ideia é fácil. Transformá-la em conteúdo interessante é outra história.</h2>
+        </div>
+
+        <div class="problem-grid">
+          <article class="card glass reveal">
+            <h3>Você não sabe como começar</h3>
+            <p>A ideia aparece, mas fica difícil criar um personagem, definir a história e organizar tudo em cenas.</p>
+          </article>
+
+          <article class="card glass reveal">
+            <h3>Os personagens parecem genéricos</h3>
+            <p>Sem uma estrutura clara, todos acabam falando e agindo do mesmo jeito.</p>
+          </article>
+
+          <article class="card glass reveal">
+            <h3>O conteúdo não prende atenção</h3>
+            <p>Uma sequência de imagens não basta. É preciso criar curiosidade, conflito e vontade de ver o próximo episódio.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="aprendizado">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Conteúdo do ebook</span>
+          <h2>Um percurso claro para transformar uma fruta em uma série.</h2>
+          <p>Você cria o personagem, define o universo, desenvolve o conflito, gera as cenas e organiza tudo em episódios.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="chapter reveal"><div><h3>Escolha a fruta</h3><p>Selecione uma fruta que combine com o tipo de personagem e história que você deseja criar.</p></div></article>
+          <article class="chapter reveal"><div><h3>Crie a personalidade</h3><p>Defina nome, forma de falar, objetivos, medos, qualidades e defeitos.</p></div></article>
+          <article class="chapter reveal"><div><h3>Monte o universo</h3><p>Crie o lugar onde os personagens vivem e as regras desse pequeno mundo.</p></div></article>
+          <article class="chapter reveal"><div><h3>Crie o conflito</h3><p>Adicione um problema, desejo ou segredo capaz de movimentar a história.</p></div></article>
+          <article class="chapter reveal"><div><h3>Gere as cenas com IA</h3><p>Use descrições detalhadas para manter personagens, roupas e cenários consistentes.</p></div></article>
+          <article class="chapter reveal"><div><h3>Transforme em episódios</h3><p>Organize as cenas em vídeos curtos, carrosséis e histórias narradas.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Aplicações práticas</span>
+          <h2>Crie uma pequena produção narrativa com ferramentas acessíveis.</h2>
+        </div>
+
+        <div class="bento-grid">
+          <article class="card glass span-7 reveal">
+            <h3>Personagens que não parecem genéricos</h3>
+            <ul class="task-list">
+              <li>Nome e personalidade</li>
+              <li>Maneira de falar</li>
+              <li>Objetivo e medo</li>
+              <li>Qualidades e defeitos</li>
+              <li>Relações com outros personagens</li>
+            </ul>
+          </article>
+
+          <article class="card glass span-5 reveal">
+            <h3>Estrutura simples de episódio</h3>
+            <ul class="task-list">
+              <li>Apresentação</li>
+              <li>Conflito</li>
+              <li>Complicação</li>
+              <li>Virada</li>
+              <li>Gancho final</li>
+            </ul>
+          </article>
+
+          <article class="card glass span-6 reveal">
+            <h3>Prompts para manter o visual</h3>
+            <ul class="task-list">
+              <li>Formato da fruta</li>
+              <li>Expressões e roupas</li>
+              <li>Cenário e iluminação</li>
+              <li>Enquadramento e estilo visual</li>
+            </ul>
+          </article>
+
+          <article class="card glass span-6 reveal">
+            <h3>Conteúdo para redes sociais</h3>
+            <ul class="task-list">
+              <li>Vídeos verticais</li>
+              <li>Carrosséis narrativos</li>
+              <li>Histórias com voz e legenda</li>
+              <li>TikTok, Reels e Shorts</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Laboratório de personagens</span>
+          <h2>Exemplos de como uma fruta pode ganhar uma voz própria.</h2>
+          <p>Personagens demonstrativos para mostrar a lógica do método.</p>
+        </div>
+
+        <div class="character-grid">
+          <article class="character-card glass reveal">
+            <div class="character-face" style="--character:linear-gradient(145deg,#fde047,#fb923c)">
+              <span class="mouth"></span>
+            </div>
+            <h3>Beto Banana</h3>
+            <p>Extrovertido, exagerado e sempre tentando parecer mais corajoso do que realmente é.</p>
+            <span class="character-role">Herói atrapalhado</span>
+          </article>
+
+          <article class="character-card glass reveal">
+            <div class="character-face" style="--character:linear-gradient(145deg,#fb7185,#f43f5e)">
+              <span class="mouth"></span>
+            </div>
+            <h3>Moranguita</h3>
+            <p>Inteligente, observadora e desconfiada de qualquer plano fácil demais.</p>
+            <span class="character-role">Investigadora da turma</span>
+          </article>
+
+          <article class="character-card glass reveal">
+            <div class="character-face" style="--character:linear-gradient(145deg,#fde047,#84cc16)">
+              <span class="mouth"></span>
+            </div>
+            <h3>Abacaxildo</h3>
+            <p>Sério por fora, sensível por dentro e conhecido por complicar situações simples.</p>
+            <span class="character-role">Rival com coração</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Fórmula da Novelinha</span>
+          <h2>Uma estrutura simples para terminar cada episódio com vontade de continuar.</h2>
+        </div>
+
+        <div class="formula-grid">
+          <div class="formula-card reveal"><strong>Personagem</strong><span>Quem participa e por que devemos nos importar.</span></div>
+          <div class="formula-card reveal"><strong>Desejo</strong><span>O que o personagem quer conseguir.</span></div>
+          <div class="formula-card reveal"><strong>Obstáculo</strong><span>O problema que impede o objetivo.</span></div>
+          <div class="formula-card reveal"><strong>Virada</strong><span>Algo inesperado que muda a cena.</span></div>
+          <div class="formula-card reveal"><strong>Gancho</strong><span>A pergunta que puxa o próximo episódio.</span></div>
+        </div>
+
+        <div class="story-example reveal">
+          <p>Beto Banana quer ser escolhido como líder da feira, mas Moranguita descobre que ele escondeu uma caixa importante. Quando ele tenta explicar, a caixa começa a se mexer sozinha.</p>
+          <span class="hook">O que existe dentro da caixa?</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Exemplo de prompt</span>
+          <h2>Quanto mais clara a descrição, mais consistente fica o personagem.</h2>
+        </div>
+
+        <div class="prompt-grid">
+          <div class="prompt-box bad reveal">
+            <span class="prompt-label">Prompt fraco</span>
+            <p>Crie uma banana personagem.</p>
+          </div>
+
+          <div class="prompt-box good reveal">
+            <span class="prompt-label">Prompt melhor</span>
+            <p>Crie um personagem chamado Beto Banana. Ele é uma banana amarela antropomórfica, jovem, expressiva e exageradamente confiante. Usa tênis roxos e uma pequena jaqueta azul. Está em uma feira de frutas moderna, olhando para a câmera com expressão de surpresa. Ilustração 3D estilizada, iluminação cinematográfica, formato vertical 9:16 e aparência consistente para uma série de vídeos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Formatos de conteúdo</span>
+          <h2>Uma mesma história pode render vários tipos de publicação.</h2>
+        </div>
+
+        <div class="format-grid">
+          <article class="card glass reveal">
+            <div class="phone"><div class="phone-screen"></div></div>
+            <h3>Vídeo vertical</h3>
+            <p>TikTok, Instagram Reels, YouTube Shorts e episódios curtos.</p>
+          </article>
+
+          <article class="card glass reveal">
+            <div class="phone"><div class="phone-screen"></div></div>
+            <h3>Carrossel</h3>
+            <p>Uma cena por página, diálogos e final com gancho.</p>
+          </article>
+
+          <article class="card glass reveal">
+            <div class="phone"><div class="phone-screen"></div></div>
+            <h3>História narrada</h3>
+            <p>Imagens, voz, música e legendas em sequência.</p>
+          </article>
+
+          <article class="card glass reveal">
+            <div class="phone"><div class="phone-screen"></div></div>
+            <h3>Série de personagens</h3>
+            <p>Rivalidades, amizades, segredos e histórias conectadas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publico">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Para quem é</span>
+          <h2>Feito para quem quer criar uma série própria sem dominar desenho ou roteiro.</h2>
+        </div>
+
+        <div class="audience-grid">
+          <article class="card glass reveal">
+            <h3>Este ebook é para você se:</h3>
+            <ul class="check-list yes">
+              <li>Quer criar conteúdo diferente para redes sociais</li>
+              <li>Gosta de histórias, personagens e criatividade</li>
+              <li>Quer usar IA para gerar imagens e ideias</li>
+              <li>Ainda não sabe escrever roteiros</li>
+              <li>Não possui experiência com desenho</li>
+              <li>Quer desenvolver uma série própria</li>
+            </ul>
+          </article>
+
+          <article class="card glass reveal">
+            <h3>Talvez não seja para você se:</h3>
+            <ul class="check-list no">
+              <li>Busca um curso avançado de cinema</li>
+              <li>Quer treinamento profissional de animação 3D</li>
+              <li>Procura programação de modelos de IA</li>
+              <li>Deseja um serviço pronto em vez de criar</li>
+              <li>Não pretende testar as atividades do ebook</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="comprar">
+      <div class="container">
+        <div class="receive glass reveal">
+          <div class="mini-cover">
+            <img src="../../assets/images/novelinha-da-fruta.webp" alt="Capa do ebook Novelinha da Fruta com IA">
+          </div>
+
+          <div>
+            <span class="eyebrow">O que você recebe</span>
+            <h2>Um método para transformar uma ideia simples em uma série de conteúdo.</h2>
+            <ul class="check-list yes">
+              <li>Ebook digital em PDF</li>
+              <li>Método para criar personagens</li>
+              <li>Estrutura de episódios</li>
+              <li>Exemplos de personalidade</li>
+              <li>Fórmula narrativa</li>
+              <li>Exemplos de prompts</li>
+              <li>Ideias para cenas</li>
+              <li>Orientações para conteúdo vertical</li>
+              <li>Acesso imediato pela Hotmart</li>
+            </ul>
+
+            <div class="hero-actions">
+              <a class="btn btn-product" href="https://hotm.io/novelIAs" target="_blank" rel="noopener">Quero criar minha novelinha</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="trust-strip glass reveal">
+          <strong>Compra processada com segurança pela Hotmart</strong>
+          <div class="trust-points">
+            <span>Pagamento único</span>
+            <span>Acesso liberado após confirmação</span>
+            <span>Garantia de 7 dias conforme as regras da plataforma</span>
+            <span>Leitura no celular, tablet ou computador</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Perguntas frequentes</span>
+          <h2>As dúvidas que normalmente aparecem antes da compra.</h2>
+        </div>
+
+        <div class="faq">
+          <div class="faq-item reveal">
+            <button class="faq-question"><span>Como recebo o ebook?</span><span class="faq-symbol">+</span></button>
+            <div class="faq-answer"><p>Após a confirmação da compra, a Hotmart envia as instruções de acesso para o seu e-mail.</p></div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question"><span>Preciso saber desenhar?</span><span class="faq-symbol">+</span></button>
+            <div class="faq-answer"><p>Não. O ebook mostra como descrever personagens e cenas para gerar imagens com ferramentas de Inteligência Artificial.</p></div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question"><span>Preciso saber escrever roteiros?</span><span class="faq-symbol">+</span></button>
+            <div class="faq-answer"><p>Não. O material apresenta uma estrutura simples para organizar personagens, conflitos, cenas e episódios.</p></div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question"><span>Consigo criar conteúdo pelo celular?</span><span class="faq-symbol">+</span></button>
+            <div class="faq-answer"><p>Sim. É possível usar ferramentas de IA, edição e publicação diretamente pelo celular.</p></div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question"><span>Preciso pagar por ferramentas de IA?</span><span class="faq-symbol">+</span></button>
+            <div class="faq-answer"><p>Não obrigatoriamente. É possível começar com ferramentas que oferecem versões gratuitas, embora algumas tenham limites de uso.</p></div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question"><span>O pagamento é mensal?</span><span class="faq-symbol">+</span></button>
+            <div class="faq-answer"><p>Não. A compra do ebook é feita com pagamento único.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="final-cta glass reveal">
+          <span class="eyebrow">Comece agora</span>
+          <h2>Sua primeira novelinha pode começar com uma única fruta.</h2>
+          <p>Crie personagens, desenvolva histórias e transforme ideias simples em conteúdos que despertam curiosidade e vontade de acompanhar o próximo episódio.</p>
+          <a class="btn btn-product" href="https://hotm.io/novelIAs" target="_blank" rel="noopener">Quero criar minha novelinha</a>
+
+          <div class="trust-list" style="justify-content:center">
+            <span>Pagamento único</span>
+            <span>Acesso imediato</span>
+            <span>Compra pela Hotmart</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="../../index.html">
+          <span class="brand-mark">U</span>
+          <span>Usarias</span>
+        </a>
+        <p>IA prática, acessível e em português.</p>
+        <span>© 2026 Usarias</span>
+      </div>
+
+      <div class="footer-col">
+        <strong>Explorar</strong>
+        <a href="../../index.html">Início</a>
+        <a href="../../index.html#biblioteca">Biblioteca</a>
+        <a href="../../index.html#ferramentas">Ferramentas</a>
+      </div>
+
+      <div class="footer-col">
+        <strong>Usarias</strong>
+        <a href="../../index.html#prompts">Prompts</a>
+        <a href="mailto:contato@usarias.com.br">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-btn");
+    const nav = document.querySelector("nav");
+
+    menuButton?.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", () => nav.classList.remove("open"));
+    });
+
+    document.querySelectorAll(".faq-question").forEach(button => {
+      button.addEventListener("click", () => {
+        button.closest(".faq-item").classList.toggle("open");
+      });
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(item => observer.observe(item));
+  </script>
+</body>
+</html>
