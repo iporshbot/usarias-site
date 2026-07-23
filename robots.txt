@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://usarias.com.br/sitemap.xml
