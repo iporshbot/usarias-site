@@ -1,6 +1,1038 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Biblioteca | Usarias</title><meta name="description" content="Conheça os ebooks da Usarias."><meta property="og:title" content="Biblioteca | Usarias"><meta property="og:description" content="Conheça os ebooks da Usarias."><meta property="og:type" content="website"><link rel="stylesheet" href="../assets/css/style.css"></head><body><header><div class="container nav"><a class="brand" href="../"><span class="logo">U</span><span>Usarias</span></a><button class="menu" aria-label="Abrir menu">☰</button><nav><a href="../ebooks/">Biblioteca</a><a href="../ferramentas/">Ferramentas</a><a href="../prompts/">Prompts</a><a href="../recursos/">Grátis</a><a href="../blog/">Blog</a><a href="../sobre/">Sobre</a></nav><a class="btn secondary" href="../ebooks/">Explorar</a></div></header>
-<main><section class="page-hero"><div class="container"><span class="eyebrow">Biblioteca Usarias</span><h1>Ebooks para aprender e imaginar.</h1><p>Guias práticos e histórias que exploram as possibilidades da Inteligência Artificial.</p></div></section>
-<section><div class="container"><div class="grid2">
-<article class="card"><div class="cover"><div class="book"><small>USARIAS GUIDES</small><strong>IA do<br>Dia a Dia</strong><small>Ferramentas básicas</small></div></div><div class="card-body"><h3>IA do Dia a Dia</h3><p>Um ponto de partida para entender e usar ferramentas de IA.</p><div class="cards-actions"><a class="btn primary" href="ia-do-dia-a-dia/">Ver detalhes</a></div></div></article>
-<article class="card"><div class="cover"><div class="book alt"><small>USARIAS STORIES</small><strong>NovelIAs</strong><small>Ficção com IA</small></div></div><div class="card-body"><h3>NovelIAs</h3><p>Histórias que exploram imaginação, tecnologia e novos mundos.</p><div class="cards-actions"><a class="btn primary" href="novelias/">Ver detalhes</a></div></div></article>
-</div></div></section></main><footer><div class="container footer"><div class="brand"><span class="logo">U</span><span>Usarias</span></div><div class="footer-links"><a href="../ebooks/">Biblioteca</a><a href="../ferramentas/">Ferramentas</a><a href="../blog/">Blog</a><a href="../contato/">Contato</a></div><span>© 2026 Usarias</span></div></footer><script src="../assets/js/main.js"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aprenda a usar ChatGPT, Claude, Gemini e outras ferramentas de Inteligência Artificial no trabalho, nos estudos e na rotina.">
+  <meta property="og:title" content="IA do Dia a Dia | Usarias">
+  <meta property="og:description" content="Um guia prático para transformar IA em produtividade, clareza e tempo livre.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../../assets/images/ia-do-dia-a-dia-capa.webp">
+  <title>IA do Dia a Dia | Guia prático para usar Inteligência Artificial</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../assets/favicon/favicon.png">
+
+  <style>
+    :root {
+      --bg: #07080c;
+      --bg-soft: #0c0f16;
+      --panel: rgba(255,255,255,.055);
+      --panel-strong: rgba(255,255,255,.085);
+      --line: rgba(255,255,255,.11);
+      --text: #f7f8fb;
+      --muted: #a8b0bf;
+      --purple: #a78bfa;
+      --blue: #60a5fa;
+      --cyan: #67e8f9;
+      --green: #86efac;
+      --danger: #fca5a5;
+      --max: 1180px;
+      --radius: 24px;
+      --shadow: 0 30px 90px rgba(0,0,0,.42);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(167,139,250,.15), transparent 28%),
+        radial-gradient(circle at 90% 18%, rgba(96,165,250,.13), transparent 30%),
+        linear-gradient(180deg, #07080c 0%, #090b11 45%, #07080c 100%);
+      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black, transparent 70%);
+    }
+
+    h1, h2, h3, .brand { font-family: "Space Grotesk", "Inter", sans-serif; }
+    h1, h2, h3, p { margin-top: 0; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { max-width: 100%; }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .glass {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: #dce4ef;
+      background: rgba(255,255,255,.035);
+      font-size: .82rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #fff 0%, #d8ccff 35%, #9debf5 72%, #fff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(7,8,12,.76);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      font-size: 1.2rem;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: #090a0f;
+      background: linear-gradient(135deg, var(--purple), var(--cyan));
+      box-shadow: 0 12px 32px rgba(103,232,249,.18);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    nav a:hover { color: var(--text); }
+
+    .menu-btn {
+      display: none;
+      color: var(--text);
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 9px 12px;
+      cursor: pointer;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 14px;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      transition: .22s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.28);
+    }
+
+    .btn-primary {
+      color: #090a0f;
+      border: 0;
+      background: linear-gradient(135deg, #fff 0%, var(--cyan) 48%, var(--purple) 100%);
+    }
+
+    .btn-secondary { background: rgba(255,255,255,.045); }
+
+    .hero {
+      padding: 92px 0 64px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 24px 0 20px;
+      font-size: clamp(3.1rem, 6.8vw, 6.4rem);
+      line-height: .95;
+      letter-spacing: -.07em;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .trust-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin-top: 22px;
+      color: #cdd5e1;
+      font-size: .9rem;
+    }
+
+    .book-stage {
+      position: relative;
+      min-height: 590px;
+      display: grid;
+      place-items: center;
+    }
+
+    .book-glow {
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      background: conic-gradient(from 180deg, var(--purple), var(--blue), var(--cyan), var(--purple));
+      opacity: .30;
+      filter: blur(20px);
+    }
+
+    .book-cover {
+      position: relative;
+      z-index: 2;
+      width: min(78%, 365px);
+      aspect-ratio: 3/4;
+      border-radius: 16px 30px 30px 16px;
+      overflow: hidden;
+      box-shadow: -34px 42px 90px rgba(0,0,0,.58);
+      transform: rotate(-5deg);
+      transition: .35s ease;
+      border: 1px solid rgba(255,255,255,.16);
+      background: #111827;
+    }
+
+    .book-cover:hover { transform: rotate(-2deg) translateY(-8px); }
+
+    .book-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .float-card {
+      position: absolute;
+      z-index: 3;
+      padding: 14px 16px;
+      border-radius: 16px;
+      min-width: 180px;
+    }
+
+    .float-card strong { display: block; font-size: .95rem; }
+    .float-card span { color: var(--muted); font-size: .78rem; }
+    .float-one { left: 0; top: 110px; }
+    .float-two { right: 0; bottom: 110px; }
+
+    .proof-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      padding: 18px;
+      border-radius: 22px;
+      margin-top: 12px;
+    }
+
+    .proof-item {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .proof-item strong { display: block; margin-bottom: 4px; }
+    .proof-item span { color: var(--muted); font-size: .9rem; }
+
+    section { padding: 82px 0; }
+
+    .section-head {
+      max-width: 840px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      margin: 14px 0 12px;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 1;
+      letter-spacing: -.055em;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .problem-grid,
+    .bento-grid,
+    .audience-grid,
+    .tool-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .problem-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .card {
+      padding: 28px;
+      border-radius: var(--radius);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+    }
+
+    .card p { color: var(--muted); margin-bottom: 0; }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+      counter-reset: chapter;
+    }
+
+    .chapter {
+      counter-increment: chapter;
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .chapter::before {
+      content: "0" counter(chapter);
+      font-family: "Space Grotesk";
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--cyan);
+    }
+
+    .chapter h3 { margin-bottom: 6px; }
+    .chapter p { color: var(--muted); margin-bottom: 0; }
+
+    .bento-grid { grid-template-columns: repeat(12, 1fr); }
+    .span-7 { grid-column: span 7; }
+    .span-5 { grid-column: span 5; }
+    .span-6 { grid-column: span 6; }
+
+    .tool-grid { grid-template-columns: repeat(5, 1fr); }
+
+    .tool-chip {
+      padding: 22px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .tool-chip strong { display: block; margin-bottom: 6px; }
+    .tool-chip span { color: var(--muted); font-size: .86rem; }
+
+    .ctop {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .ctop-letters {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .letter-card {
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.035);
+    }
+
+    .letter-card strong {
+      display: block;
+      font-size: 1.8rem;
+      color: var(--cyan);
+    }
+
+    .prompt-box {
+      padding: 24px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+    }
+
+    .prompt-box + .prompt-box { margin-top: 14px; }
+    .prompt-box.bad { border-color: rgba(252,165,165,.25); }
+    .prompt-box.good { border-color: rgba(134,239,172,.25); }
+
+    .prompt-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      font-weight: 800;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .audience-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 30px;
+      margin: 12px 0;
+      color: var(--muted);
+    }
+
+    .check-list li::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 900;
+    }
+
+    .yes li::before { content: "✓"; color: var(--green); }
+    .no li::before { content: "×"; color: var(--danger); }
+
+    .receive {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 36px;
+      align-items: center;
+      padding: 36px;
+      border-radius: 30px;
+    }
+
+    .mini-cover {
+      width: min(100%, 300px);
+      aspect-ratio: 3/4;
+      border-radius: 12px 22px 22px 12px;
+      overflow: hidden;
+      box-shadow: -22px 28px 60px rgba(0,0,0,.45);
+      transform: rotate(-4deg);
+      justify-self: center;
+    }
+
+    .mini-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .trust-strip {
+      padding: 30px;
+      border-radius: 22px;
+      text-align: center;
+    }
+
+    .trust-points {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px 28px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255,255,255,.035);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 20px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .28s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 22px 22px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .faq-item.open .faq-answer { max-height: 240px; }
+    .faq-symbol { transition: transform .25s ease; }
+    .faq-item.open .faq-symbol { transform: rotate(45deg); }
+
+    .final-cta {
+      padding: 56px;
+      border-radius: 32px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(167,139,250,.2), transparent 28%),
+        radial-gradient(circle at 88% 80%, rgba(103,232,249,.16), transparent 26%),
+        rgba(255,255,255,.04);
+    }
+
+    .final-cta h2 {
+      margin: 12px auto 14px;
+      max-width: 840px;
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+
+    .final-cta p {
+      max-width: 700px;
+      margin: 0 auto 26px;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid rgba(255,255,255,.07);
+      color: var(--muted);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(2, .8fr);
+      gap: 28px;
+    }
+
+    .footer-col strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .footer-col a { display: block; margin: 8px 0; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      nav {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        background: #0b0d13;
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav.open { display: flex; }
+      .menu-btn { display: inline-flex; }
+      .nav > .btn { display: none; }
+
+      .hero-grid,
+      .ctop,
+      .receive,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero { padding-top: 72px; }
+      .book-stage { min-height: 500px; }
+      .proof-bar { grid-template-columns: repeat(2, 1fr); }
+      .problem-grid { grid-template-columns: 1fr; }
+      .audience-grid { grid-template-columns: 1fr; }
+      .tool-grid { grid-template-columns: repeat(2, 1fr); }
+      .span-7, .span-5, .span-6 { grid-column: span 12; }
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: clamp(2.8rem, 15vw, 4.6rem); }
+      section { padding: 64px 0; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .trust-list { flex-direction: column; gap: 8px; }
+      .proof-bar { grid-template-columns: 1fr; }
+      .tool-grid { grid-template-columns: 1fr; }
+      .book-stage { min-height: 430px; }
+      .float-card { min-width: 150px; padding: 12px; }
+      .float-one { left: 0; top: 80px; }
+      .float-two { right: 0; bottom: 70px; }
+      .chapter { grid-template-columns: 52px 1fr; }
+      .ctop-letters { grid-template-columns: 1fr; }
+      .receive, .final-cta { padding: 28px; }
+      .trust-points { flex-direction: column; gap: 8px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="../../index.html" aria-label="Usarias, página inicial">
+        <span class="brand-mark">U</span>
+        <span>Usarias</span>
+      </a>
+
+      <button class="menu-btn" aria-label="Abrir menu">☰</button>
+
+      <nav aria-label="Navegação principal">
+        <a href="../../index.html">Início</a>
+        <a href="../../index.html#biblioteca">Biblioteca</a>
+        <a href="#aprendizado">Conteúdo</a>
+        <a href="#publico">Para quem é</a>
+        <a href="#faq">Perguntas frequentes</a>
+      </nav>
+
+      <a class="btn btn-secondary" href="#comprar">Quero o ebook</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Edição completa e redesenhada</span>
+          <h1>Use Inteligência Artificial no seu dia a dia <span class="gradient-text">sem complicação.</span></h1>
+          <p class="hero-copy">Um guia visual e direto para usar ChatGPT, Claude, Gemini, Copilot, Perplexity e outras IAs no trabalho, nos estudos e na rotina, mesmo começando do zero.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://hotm.io/iadodia" target="_blank" rel="noopener">Quero aprender com IA</a>
+            <a class="btn btn-secondary" href="#aprendizado">Ver o conteúdo</a>
+          </div>
+
+          <div class="trust-list">
+            <span>✓ Pagamento único</span>
+            <span>✓ Acesso imediato</span>
+            <span>✓ Leitura no celular, tablet ou computador</span>
+          </div>
+        </div>
+
+        <div class="book-stage" aria-label="Capa do ebook IA do Dia a Dia">
+          <div class="book-glow"></div>
+
+          <div class="book-cover">
+            <img src="../../assets/images/ia-do-dia-a-dia-capa.webp" alt="Capa do ebook IA do Dia a Dia">
+          </div>
+
+          <div class="float-card float-one glass">
+            <strong>9 capítulos práticos</strong>
+            <span>Do básico à automação</span>
+          </div>
+
+          <div class="float-card float-two glass">
+            <strong>Plano de ação de 30 dias</strong>
+            <span>Aprenda fazendo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="proof-bar glass">
+          <div class="proof-item"><strong>Comece do zero</strong><span>Sem linguagem técnica desnecessária</span></div>
+          <div class="proof-item"><strong>Prompts prontos</strong><span>Modelos para copiar e adaptar</span></div>
+          <div class="proof-item"><strong>Aplicação profissional</strong><span>Marketing, vendas, RH, financeiro e mais</span></div>
+          <div class="proof-item"><strong>Uso responsável</strong><span>Cuidados com dados, erros e revisão</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Por que este guia existe</span>
+          <h2>IA não precisa ser um labirinto tecnológico.</h2>
+          <p>O objetivo do ebook é mostrar como transformar ferramentas de IA em atalhos úteis para tarefas que já fazem parte da sua vida.</p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="card glass reveal">
+            <h3>Você não sabe o que pedir</h3>
+            <p>Aprenda a estruturar pedidos claros para receber respostas melhores desde a primeira tentativa.</p>
+          </article>
+
+          <article class="card glass reveal">
+            <h3>As respostas parecem genéricas</h3>
+            <p>Descubra como contexto, objetivo e parâmetros mudam completamente a qualidade do resultado.</p>
+          </article>
+
+          <article class="card glass reveal">
+            <h3>É difícil aplicar na rotina</h3>
+            <p>Use exemplos de trabalho, estudos, conteúdo e organização para sair da teoria e começar hoje.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="aprendizado">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Conteúdo do ebook</span>
+          <h2>Um percurso completo, construído para iniciantes.</h2>
+          <p>Você entende as ferramentas, aprende a pedir, aplica por área profissional e termina com um plano de ação.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="chapter reveal"><div><h3>Entendendo os tipos de Inteligência Artificial</h3><p>Texto, imagem, áudio, vídeo, produtividade e automação explicados de forma simples.</p></div></article>
+          <article class="chapter reveal"><div><h3>As principais ferramentas de texto</h3><p>ChatGPT, Claude, Gemini, Copilot e Perplexity, com pontos fortes e usos recomendados.</p></div></article>
+          <article class="chapter reveal"><div><h3>Imagem, áudio e vídeo na prática</h3><p>Como criar imagens, transformar áudio em texto e agilizar a edição de vídeos curtos.</p></div></article>
+          <article class="chapter reveal"><div><h3>A fórmula de pedidos que funciona</h3><p>O método CTOP para transformar comandos vagos em instruções claras e úteis.</p></div></article>
+          <article class="chapter reveal"><div><h3>IA para produtividade</h3><p>E-mails, reuniões, planilhas, apresentações, organização e estudo.</p></div></article>
+          <article class="chapter reveal"><div><h3>IA por área profissional</h3><p>Marketing, vendas, atendimento, RH, financeiro, educação e trabalho freelancer.</p></div></article>
+          <article class="chapter reveal"><div><h3>Automatizando tarefas repetitivas</h3><p>Prompts salvos, assistentes personalizados, Zapier, Make e fluxos simples.</p></div></article>
+          <article class="chapter reveal"><div><h3>Erros comuns e cuidados importantes</h3><p>Privacidade, informações inventadas, revisão e limites do uso profissional.</p></div></article>
+          <article class="chapter reveal"><div><h3>Plano de ação de 30 dias</h3><p>Um roteiro semanal para transformar o uso de IA em hábito real.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Ferramentas apresentadas</span>
+          <h2>Escolha a ferramenta certa para cada tarefa.</h2>
+        </div>
+
+        <div class="tool-grid">
+          <article class="tool-chip glass reveal"><strong>ChatGPT</strong><span>Uso geral, criatividade, texto, imagem e voz</span></article>
+          <article class="tool-chip glass reveal"><strong>Claude</strong><span>Textos longos, documentos e análise cuidadosa</span></article>
+          <article class="tool-chip glass reveal"><strong>Gemini</strong><span>Integração com Gmail, Docs e Planilhas</span></article>
+          <article class="tool-chip glass reveal"><strong>Copilot</strong><span>Word, Excel, Outlook, Teams e Microsoft 365</span></article>
+          <article class="tool-chip glass reveal"><strong>Perplexity</strong><span>Pesquisa atualizada com fontes</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Aplicações práticas</span>
+          <h2>Use IA em tarefas que já fazem parte da sua rotina.</h2>
+        </div>
+
+        <div class="bento-grid">
+          <article class="card glass span-7 reveal">
+            <h3>Trabalho e administração</h3>
+            <p>Responder e-mails, resumir reuniões, organizar relatórios, analisar documentos e preparar apresentações.</p>
+          </article>
+
+          <article class="card glass span-5 reveal">
+            <h3>Estudos</h3>
+            <p>Resumir conteúdos, criar simulados, explicar assuntos difíceis e montar planos de estudo.</p>
+          </article>
+
+          <article class="card glass span-6 reveal">
+            <h3>Marketing e conteúdo</h3>
+            <p>Gerar ideias, roteiros, legendas, variações de texto, capas e peças visuais.</p>
+          </article>
+
+          <article class="card glass span-6 reveal">
+            <h3>Vendas e atendimento</h3>
+            <p>Criar respostas padrão, preparar argumentos, treinar objeções e resumir históricos de clientes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container ctop">
+        <div class="card glass reveal">
+          <span class="eyebrow">Método CTOP</span>
+          <h2>Um bom prompt começa com uma estrutura simples.</h2>
+          <div class="ctop-letters">
+            <div class="letter-card"><strong>C</strong><span>Contexto</span></div>
+            <div class="letter-card"><strong>T</strong><span>Tarefa</span></div>
+            <div class="letter-card"><strong>O</strong><span>Objetivo</span></div>
+            <div class="letter-card"><strong>P</strong><span>Parâmetros</span></div>
+          </div>
+        </div>
+
+        <div class="card glass reveal">
+          <div class="prompt-box bad">
+            <span class="prompt-label">Pedido fraco</span>
+            <p>Escreva um e-mail para um cliente.</p>
+          </div>
+
+          <div class="prompt-box good">
+            <span class="prompt-label">Pedido melhor</span>
+            <p>Você é um assistente de atendimento de uma loja de roupas online. Escreva um e-mail cordial avisando que o pedido terá três dias de atraso, oferecendo uma solução e mantendo o texto com até 120 palavras.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publico">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Para quem é</span>
+          <h2>Feito para quem quer clareza, não uma parede de termos técnicos.</h2>
+        </div>
+
+        <div class="audience-grid">
+          <article class="card glass reveal">
+            <h3>Este ebook é para você se:</h3>
+            <ul class="check-list yes">
+              <li>Nunca usou IA ou usou pouco</li>
+              <li>Sente dificuldade para criar bons prompts</li>
+              <li>Quer economizar tempo no trabalho</li>
+              <li>Prefere explicações simples e visuais</li>
+              <li>Quer exemplos que possa aplicar imediatamente</li>
+            </ul>
+          </article>
+
+          <article class="card glass reveal">
+            <h3>Talvez não seja para você se:</h3>
+            <ul class="check-list no">
+              <li>Já usa IA profissionalmente todos os dias</li>
+              <li>Procura programação avançada</li>
+              <li>Quer um curso em vídeo</li>
+              <li>Busca conteúdo técnico sobre treinamento de modelos</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="comprar">
+      <div class="container">
+        <div class="receive glass reveal">
+          <div class="mini-cover">
+            <img src="../../assets/images/ia-do-dia-a-dia-capa.webp" alt="Capa do ebook IA do Dia a Dia">
+          </div>
+
+          <div>
+            <span class="eyebrow">O que você recebe</span>
+            <h2>Uma edição visual, prática e pronta para consulta.</h2>
+            <ul class="check-list yes">
+              <li>Ebook digital em PDF</li>
+              <li>9 capítulos completos</li>
+              <li>Exemplos de prompts</li>
+              <li>Aplicações por profissão</li>
+              <li>Glossário de termos essenciais</li>
+              <li>Plano de ação de 30 dias</li>
+              <li>Lista rápida de ferramentas</li>
+              <li>Acesso imediato pela Hotmart</li>
+            </ul>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://hotm.io/iadodia" target="_blank" rel="noopener">Quero meu exemplar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="trust-strip glass reveal">
+          <strong>Compra processada com segurança pela Hotmart</strong>
+          <div class="trust-points">
+            <span>Pagamento único</span>
+            <span>Acesso liberado após confirmação</span>
+            <span>Garantia de 7 dias conforme as regras da plataforma</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Perguntas frequentes</span>
+          <h2>As dúvidas que normalmente aparecem antes da compra.</h2>
+        </div>
+
+        <div class="faq">
+          <div class="faq-item reveal">
+            <button class="faq-question"><span>Como recebo o ebook?</span><span class="faq-symbol">+</span></button>
+            <div class="faq-answer"><p>Após a confirmação da compra, a Hotmart envia as instruções de acesso para o seu e-mail.</p></div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question"><span>Preciso pagar pelas ferramentas de IA?</span><span class="faq-symbol">+</span></button>
+            <div class="faq-answer"><p>Não. O ebook apresenta ferramentas que possuem versões gratuitas suficientes para começar.</p></div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question"><span>Consigo ler pelo celular?</span><span class="faq-symbol">+</span></button>
+            <div class="faq-answer"><p>Sim. O ebook é entregue em PDF e pode ser aberto no celular, tablet ou computador.</p></div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question"><span>O conteúdo serve para iniciantes?</span><span class="faq-symbol">+</span></button>
+            <div class="faq-answer"><p>Sim. O material foi criado para quem está começando e evita explicações técnicas desnecessárias.</p></div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question"><span>O pagamento é mensal?</span><span class="faq-symbol">+</span></button>
+            <div class="faq-answer"><p>Não. A compra do ebook é feita com pagamento único.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="final-cta glass reveal">
+          <span class="eyebrow">Comece agora</span>
+          <h2>Use IA para ganhar tempo sem entregar seu pensamento para a máquina.</h2>
+          <p>Aprenda a usar as ferramentas como apoio para pensar, decidir, criar e trabalhar melhor.</p>
+          <a class="btn btn-primary" href="https://hotm.io/iadodia" target="_blank" rel="noopener">Quero meu exemplar</a>
+          <div class="trust-list" style="justify-content:center">
+            <span>Pagamento único</span>
+            <span>Acesso imediato</span>
+            <span>Compra pela Hotmart</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="../../index.html">
+          <span class="brand-mark">U</span>
+          <span>Usarias</span>
+        </a>
+        <p>IA prática, acessível e em português.</p>
+        <span>© 2026 Usarias</span>
+      </div>
+
+      <div class="footer-col">
+        <strong>Explorar</strong>
+        <a href="../../index.html">Início</a>
+        <a href="../../index.html#biblioteca">Biblioteca</a>
+        <a href="../../index.html#ferramentas">Ferramentas</a>
+      </div>
+
+      <div class="footer-col">
+        <strong>Usarias</strong>
+        <a href="../../index.html#prompts">Prompts</a>
+        <a href="mailto:contato@usarias.com.br">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-btn");
+    const nav = document.querySelector("nav");
+
+    menuButton?.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", () => nav.classList.remove("open"));
+    });
+
+    document.querySelectorAll(".faq-question").forEach(button => {
+      button.addEventListener("click", () => {
+        button.closest(".faq-item").classList.toggle("open");
+      });
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(item => observer.observe(item));
+  </script>
+</body>
+</html>
