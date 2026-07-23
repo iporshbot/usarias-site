@@ -511,7 +511,18 @@
       transform: rotate(-6deg);
       transition: .3s ease;
     }
+.book-cover-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: inherit;
+}
 
+.book-mockup:has(.book-cover-image) {
+  padding: 0;
+  overflow: hidden;
+}
     .book-card:hover .book-mockup {
       transform: rotate(-2deg) translateY(-6px);
     }
@@ -854,11 +865,13 @@
           </article>
 
           <article class="book-card glass reveal">
-            <div class="book-mockup alt">
-              <small>USARIAS STORIES</small>
-              <strong>Novelinha de Fruta</strong>
-              <small>Histórias criadas com apoio de IA</small>
-            </div>
+           <div class="book-mockup alt">
+  <img
+    src="/assets/images/novelinha-da-fruta.webp"
+    alt="Capa do ebook Novelinha da Fruta com IA"
+    class="book-cover-image"
+  >
+</div>
 
             <div class="book-info">
               <span class="tag">Ficção</span>
